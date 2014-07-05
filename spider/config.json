@@ -1,0 +1,11 @@
+{
+	"mongo-db":{
+		"host":"localhost",
+		"port":"27017",
+		"database":"node-spider"
+	},
+  "crawler":{
+		"follow_external":1
+	},
+	"baseSite":"http://marlonsantos.com/test1.html"
+}
