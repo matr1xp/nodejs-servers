@@ -19,14 +19,14 @@ app.set('port', process.env.PROXY_PORT || 8080);
 var blacklist = [];
 var iplist    = [];
 
-fs.watchFile('/home/node/server/proxy/blacklist', function(c,p) { update_blacklist(); });
-fs.watchFile('/home/node/server/proxy/iplist', function(c,p) { update_iplist(); });
+fs.watchFile('./blacklist', function(c,p) { update_blacklist(); });
+fs.watchFile('./iplist', function(c,p) { update_iplist(); });
 
 function update_blacklist() {
-  fs.stat('/home/node/server/proxy/blacklist', function(err, stats) {
+  fs.stat('./blacklist', function(err, stats) {
     if (!err) {
       util.log("Updating blacklist.");
-      blacklist = fs.readFileSync('/home/node/server/proxy/blacklist','utf8').split('\n')
+      blacklist = fs.readFileSync('./blacklist','utf8').split('\n')
                   .filter(function(rx) { return rx.length })
                   .map(function(rx) { return RegExp(rx) });
     }
@@ -34,10 +34,10 @@ function update_blacklist() {
 }
 
 function update_iplist() {
-  fs.stat('/home/node/server/proxy/iplist', function(err, stats) {
+  fs.stat('./iplist', function(err, stats) {
     if (!err) {
       util.log("Updating iplist.");
-      iplist = fs.readFileSync('/home/node/server/proxy/iplist','utf8').split('\n')
+      iplist = fs.readFileSync('./iplist','utf8').split('\n')
                .filter(function(rx) { return rx.length });
     }
   });
@@ -112,4 +112,5 @@ http.createServer(function(request, response) {
 
 update_blacklist();
 update_iplist();
+
 console.log("Proxy server listening on port "+app.get('port'));

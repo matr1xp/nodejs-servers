@@ -2,7 +2,7 @@
 	"mongo-db":{
 		"host":"localhost",
 		"port":"27017",
-		"database":"node-spider"
+		"database":"crawler"
 	},
   "crawler":{
 		"follow_external":0
