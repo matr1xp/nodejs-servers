@@ -1,0 +1,9 @@
+{
+  "port": 8080,
+  "twitter":{
+    "API_URL":"https://api.twitter.com/",
+    "CONSUMER_KEY":"W4tampxYgp3niT4TZjDKvmRxy",
+    "CONSUMER_SECRET":"qWluP8vcCt3Bc6pLjwHDwhV1lnRn6pL6Mqw6RAHaT9TVcv4zK8",
+    "CALLBACK_URL":"http://marlsantos.com:8080/auth/twitter/callback"
+  }
+}

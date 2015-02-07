@@ -5,7 +5,7 @@
 		"database":"node-spider"
 	},
   "crawler":{
-		"follow_external":1
+		"follow_external":0
 	},
-	"baseSite":"http://marlonsantos.com/test1.html"
+	"baseSite":"http://stage.courses.mq.edu.au/"
 }

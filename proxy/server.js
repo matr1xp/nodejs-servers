@@ -5,10 +5,16 @@
 ** A simple proxy server written in node.js.
 **
 */
+require ('newrelic');
 
 var http = require('http');
 var util  = require('util');
 var fs   = require('fs');
+var express = require('express');
+
+var app = express();
+
+app.set('port', process.env.PROXY_PORT || 8080);
 
 var blacklist = [];
 var iplist    = [];
@@ -102,8 +108,8 @@ http.createServer(function(request, response) {
   	}
   });
 
-}).listen(8080);
+}).listen(app.get('port'));
 
 update_blacklist();
 update_iplist();
-
+console.log("Proxy server listening on port "+app.get('port'));

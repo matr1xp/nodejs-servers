@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-	"express": "3.3.4",
-    "request": "2.36.0",
+    "async": "*",
     "cheerio": "0.17.0",
-    "mysql" : "2.3.2",
-	"mongodb": "1.4.7",
-	"async":"*"
+    "express": "3.3.4",
+    "mongodb": "^1.4.7",
+    "mysql": "2.3.2",
+    "request": "2.36.0"
   }
 }

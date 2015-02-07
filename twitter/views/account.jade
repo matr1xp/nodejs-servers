@@ -1,0 +1,9 @@
+extends layout
+block content
+  body
+    p
+      img(src=''+user.photos[0].value)
+      br
+      username: = user.username
+      br
+      Name: = user.displayName

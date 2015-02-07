@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  if (!user)
+    p Welcome! Please
+       a(href='/login') login.
+  else
+      p= 'Welcome, ' + user.username + '.'

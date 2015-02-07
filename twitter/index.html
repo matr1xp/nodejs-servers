@@ -1,0 +1,335 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Page witle -->
+  <title>marlsantos.com</title>
+
+  <link rel="shortcut icon" href="favicon.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css"> <!-- Regular stylesheet -->
+  <link rel="stylesheet" href="css/green.css"> <!-- Pick color scheme (black.css, blue.css, brown.css, dark_green.css, green.css, white.css)-->
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Cantarell:regular,italic,bold" rel="stylesheet" type="text/css">
+
+  <!-- JavaScript -->
+  <script src="js/jquery-1.5.1.min.js"></script> <!-- Load jQuery library -->
+  <script src="js/modernizr-1.7.min.js"></script> <!-- Load Modernizr -->
+  <script>
+	$(function () {
+
+		/* Put your JavaScript here */
+
+	});
+  </script>
+</head>
+
+<body>
+  <div id="pattern"><div id="gradient">
+
+    <!-- Image background -->
+	<div id="background_image">
+		<!-- Insert image here -->
+	</div>
+	<!-- Image background end -->
+
+
+	<!-- Main page -->
+    <div id="main_page">
+
+	  <!-- Header -->
+	  <header>
+	    <h1>marlsantos.com</h1> <!-- Set the page title -->
+	  </header>
+
+	  <!-- Additional content -->
+	  <div id="content"> &nbsp;
+
+
+		  <!-- Custom text -->
+		  <section class="text">
+			<p>coming soon</p>
+		  </section>
+		  <!-- Custom text end -->
+
+
+		  <!-- Countdown -->
+		  <script src="js/jquery.countdown.min.js"></script> <!-- Load jQuery Countdown library -->
+		  <script>
+			$(function() {
+				launchTime = new Date(2014,08,01); // Set launch: [year], [month], [day], [hour]...
+					launchTime.setDate(launchTime.getDate()); // Add 15 days
+				$("#countdown").countdown({until: launchTime, format: "odHMS"});
+			});
+		  </script>
+		  <section class="countdown">
+			<div id="countdown"></div>
+		  </section>
+		  <!-- Countdown end -->
+
+
+		  <!-- Progress -->
+		  <script>
+		    $(function() {
+				$("#progressbar").animate({width: $(".progress h2").text()}, 2000);
+			});
+		  </script>
+		  <section class="progress">
+			<div id="progressbar"></div>
+			<h2>15%</h2> <!-- Set your progress, must be percentage -->
+		  </section>
+		  <!-- Progress end -->
+
+
+		  <!-- Short description -->
+		  <section class="description">
+			<div class="description_top"></div>
+			<div class="description_content">
+			  <p>The guy is juggling work and being a dad to his 2 young kids and would take some time to build content for his new website.</p>
+			  <p>Well if you insist, here's <a href="#show_more_info">more information</a> about this dude to keep you started.</p>
+
+			</div>
+			<div class="description_bottom"></div>
+		  </section>
+		  <!-- Short description end -->
+
+
+		  <!-- Twitter -->
+		  <script src="js/node-js.tweet.js"></script> <!-- Load jQuery Twitter library -->
+		  <script>
+			$(function() {
+				$("#tweet").tweet({
+					username: "saintmarl", // Your Twitter username
+					count: 1, // Number of tweets to show up
+					loading_text: "Loading tweets...",
+					fetch: 10, filter: function(t){ return ! /^@\w+/.test(t["text"]); }, // Fetch more tweets and filter out replies
+					callback: function () {	$(".tweet_list").fadeIn(); }
+				});
+			});
+		  </script>
+		  <section class="twitter">
+			<div id="tweet"></div>
+		  </section>
+		  <!-- Twitter end -->
+
+
+		  <!-- Subscription form -->
+		  <script>
+		    $(function() {
+				$(".subscribe input.submit").click(function (event) {
+					event.preventDefault();
+					event.returnValue = false;
+					$.ajax({
+						type: "POST",
+						url: "subscribe.php",
+						data: {email: $(".subscribe input[name=email]").val()},
+						success: function(data) {
+							alert(data + 'a');
+							if (data == "successful") {
+								$(".subscribe p").html("Thanks for your interest! We will let you know.").slideDown();
+							} else if (data == "already_subscribed") {
+								$(".subscribe p").html("This email is already subscribed.").slideDown();
+							} else if (data == "invalid_email") {
+								$(".subscribe p").html("This email is invalid.").slideDown();
+							} else {
+								$(".subscribe p").html("Something went wrong. Please try again.").slideDown();
+							}
+						},
+						error: function () {
+							$(".subscribe p").html("Subscription is not available.").slideDown();
+						}
+					});
+				});
+			});
+		  </script>
+		  <section class="subscribe">
+			<p></p>
+			<form method="post">
+			  <input name="email" placeholder="Your e-mail address...">
+			  <input type="submit" class="submit" value="Notify me">
+			</form>
+		  </section>
+		  <!-- Subscription form end -->
+
+
+		  <!-- More info, part 1 -->
+		  <script>
+		    $(function() {
+				$("#show_more_info").click(function () {
+					$("#main_page").fadeOut("slow", function () {
+						$("#more_info_page").fadeIn("slow");
+					});
+				});
+				$("#show_main").click(function () {
+					$("#more_info_page").fadeOut("slow", function () {
+						$("#main_page").fadeIn("slow");
+					});
+				});
+			});
+		  </script>
+		  <section class="more_info">
+			<a href="#" id="show_more_info" class="button">More information</a>
+		  </section>
+		  <!-- More info, part 1 end -->
+
+
+	  </div>
+
+	</div>
+	<!-- Main page end -->
+
+	<!-- More info, part 2 -->
+	<div id="more_info_page"><div class="dark_background"></div>
+
+	  <a href="#" id="show_main" class="button">Back</a><div class="clearfix"></div>
+
+	   <!-- About -->
+	  <section class="about">
+
+		<h2>About</h2>
+
+		<!-- First paragraph -->
+		<p>Software engineer living and working in Sydney, NSW Australia.</p>
+		<p>Father of two, husband of one but master of none.</p>
+		<!-- First paragraph end -->
+
+
+	    <!-- Second paragraph
+		<h3>Ut elementum turpis</h3>
+		<p>Curabitur adipiscing nisl urna, <a href="#">vulputate</a> convallis quam. Integer vulputate mi quis risus feugiat eu condimentum tortor sodales.</p>
+             -- Second paragraph end /-->
+
+
+		<!-- Social icons -->
+		<h3>Social</h3>
+		<a href="https://www.facebook.com/saintmarl"><img src="img/facebook.png" alt="Facebook" class="social" /></a>
+		<a href="https://twitter.com/saintmarl"><img src="img/twitter.png" alt="Twitter" class="social" /></a>
+		<a href="https://au.linkedin.com/pub/marlon-santos/50/a0b/3b0/"><img src="img/linkedin.png" alt="LinkedIn" class="social" /></a>
+		<a href="https://github.com/matr1xprogrammer"><img src="img/github.png" alt="GitHub" class="social"></a>
+		<!--a href=""><img src="img/flickr.png" alt="Flickr" class="social" /></a-->
+		<a href="https://plus.google.com/102892731534642089966/posts"><img src="img/youtube.png" alt="YouTube" class="social" /></a>
+		<!-- Social icons end -->
+
+
+		<!-- Contact form -->
+		<script>
+		  $(function() {
+			$("#more_info_page input.submit").click(function (event) {
+				event.preventDefault();
+				event.returnValue = false;
+				$.ajax({
+					type: "POST",
+					url: "contact.php",
+					data: {
+						email: $("#more_info_page input[name=email]").val(),
+						text: $("#more_info_page textarea[name=text]").val()
+					},
+					success: function(data) {
+						if (data == "successful") {
+							$(".contact_form_status").html("Message has been sent.").slideDown();
+						} else if (data == "invalid_email") {
+							$(".contact_form_status").html("This email is invalid.").slideDown();
+						} else {
+							$(".contact_form_status").html("Something went wrong. Please try again.").slideDown();
+						}
+					},
+					error: function () {
+						$(".contact_form_status").html("Contact form is not available.").slideDown();
+					}
+				});
+			});
+		  });
+		</script>
+		<h3>Contact form</h3>
+		<p class="contact_form_status"></p>
+		<form method="post" class="clearfix">
+		  <input name="email" placeholder="Your e-mail">
+		  <textarea name="text"></textarea>
+		  <input type="submit" class="submit" value="Send a message">
+		</form>
+		<!-- Contact form end -->
+
+
+	  </section>
+	  <!-- About end -->
+
+
+	  <!-- Contact -->
+	  <section class="contact">
+
+		<h2>Contact</h2>
+
+		<!-- First paragraph -->
+		<p>You can reach me by email at webmaster@marlsantos.com</p>
+		<!-- First paragraph end -->
+
+
+		<!-- First person contact card -->
+		<p class="person vcard">
+		  <img src="img/avatar.png" alt="Marlon Santos" class="photo" />
+		  <span class="fn n">Marlon Santos <em>software engineer</em></span>
+		  <span class="email">webmaster@marlsantos.com</span>
+		  <span class="tel">+614 303 xxx 121</span>
+		  <span class="clearfix"></span>
+		</p>
+		<!-- First person contact card end -->
+
+
+	    <!-- Second person contact card
+		<p class="person vcard">
+		  <img src="img/avatar.png" alt="John Smith" class="photo" />
+		  <span class="fn n">John Smith <em>designer</em></span>
+		  <span class="email">designer@coming.soon</span>
+		  <span class="tel">+421 111 222 333</span>
+		  <span class="clearfix"></span>
+		</p>
+             -- Second person contact end /-->
+
+		<div class="clearfix"></div>
+
+		<!-- Address -->
+		<script>
+		  $(function() {
+			  marker = "Meadowbank, New South Wales"; // Set the address for marker
+			  $("#map").attr("href", "https://maps.google.com/maps?q=" + escape(marker));
+			  $("#map img").attr("src", "https://maps.google.com/maps/api/staticmap?markers=" + escape(marker) + "&size=360x190&sensor=false");
+		  });
+		</script>
+		<h3>Address</h3>
+		<figure class="address vcard">
+		  <a href="" id="map"><img src="img/map_placeholder.jpg" alt="Map" /></a>
+		  <figcaption>
+		    <span class="fn">marlsantos.com</span>,
+			<span class="adr">Somewhere in Meadowbank, NSW, Australia</span>
+		  </figcaption>
+		</figure>
+		<!-- Address end -->
+
+	  </section>
+	  <!-- Contact end-->
+
+	</div>
+	<!-- More info, part 2 end -->
+
+  </div></div>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.marlsantos.com/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 4]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="https://analytics.marlsantos.com/piwik/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+</html>

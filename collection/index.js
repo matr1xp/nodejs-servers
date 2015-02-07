@@ -9,9 +9,9 @@ var Fs = require('fs'),
     FileDriver = require('../common/fileDriver').FileDriver,
     Config = require('../common/configLoader.js');
 
-var privateKey = Fs.readFileSync('/data/apache/marlsantos_com/mxmbp.marlsantos.com.key', 'utf8');
-var certificate = Fs.readFileSync('/data/apache/marlsantos_com/mxmbp.marlsantos.com.crt', 'utf8');
-var credentials = {key: privateKey, cert: certificate};
+//var privateKey = Fs.readFileSync('/data/apache/marlsantos_com/mxmbp.marlsantos.com.key', 'utf8');
+//var certificate = Fs.readFileSync('/data/apache/marlsantos_com/mxmbp.marlsantos.com.crt', 'utf8');
+//var credentials = {key: privateKey, cert: certificate};
 
 var app = Express();
 

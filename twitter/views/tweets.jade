@@ -1,0 +1,3 @@
+ul.tweets
+  for tweet in tweets
+     blockquote(class="twitter-tweet" data-link-color="#cc0000" data-theme="dark") !{Autolinker.link(tweet.text)}
