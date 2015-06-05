@@ -1,0 +1,12 @@
+<html>
+<body>
+<h1>Simple Page</h1>
+<script type="text/javascript" src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+<script>
+    var socket = io.connect('http://marlsantos.com:3000');
+    socket.on('connect', function () {
+      socket.send(window.location.href);
+    });
+</script>
+</body>
+</html>
