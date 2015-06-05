@@ -11,7 +11,7 @@ var Request = require('request'),
 		util = require('util');
 
 Config.load(__dirname+'/config.json');
-
+console.log("Loaded configuration from ",__dirname+'/config.json');
 var Crawler = function(db){
 	var self = this;
 	//check if MongoDB running
