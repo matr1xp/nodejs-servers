@@ -1,11 +1,12 @@
 {
 	"mongo-db":{
-		"host":"localhost",
+		"host":"127.0.0.1",
 		"port":"27017",
 		"database":"crawler"
 	},
-  "crawler":{
-		"follow_external":0
+	"crawler":{
+		"follow_external":0,
+		"port":"8888"
 	},
 	"baseSite":"http://devapps.com.au/"
 }

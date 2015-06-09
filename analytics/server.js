@@ -1,5 +1,9 @@
-var io = require('socket.io').listen(3000),
-	util = require('util');
+var util = require('util'),
+    Config = require('../common/configLoader.js');
+
+Config.load(__dirname+'/config.json');
+
+var io = require('socket.io').listen(Config.get('server')['port']);
 
 /*io.configure(function () {
     io.set('authorization', function (handshakeData, callback) {
