@@ -6,7 +6,7 @@
     "async": "*",
     "cheerio": "0.17.0",
     "express": ">=3.11.0",
-    "mongodb": "^1.4.7",
+    "mongodb": ">=3.1.13",
     "mysql": ">=2.14.0",
     "request": ">=2.68.0"
   }
