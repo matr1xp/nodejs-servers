@@ -3,6 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-	 "mongodb": "3.6.1"
+	 "mongodb": "3.6.10"
   }
 }
